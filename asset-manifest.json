@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/zygopter.github.io/static/css/main.3e847871.css",
+    "main.js": "/zygopter.github.io/static/js/main.b70dcd99.js",
+    "static/js/787.d492746f.chunk.js": "/zygopter.github.io/static/js/787.d492746f.chunk.js",
+    "index.html": "/zygopter.github.io/index.html",
+    "main.3e847871.css.map": "/zygopter.github.io/static/css/main.3e847871.css.map",
+    "main.b70dcd99.js.map": "/zygopter.github.io/static/js/main.b70dcd99.js.map",
+    "787.d492746f.chunk.js.map": "/zygopter.github.io/static/js/787.d492746f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3e847871.css",
+    "static/js/main.b70dcd99.js"
+  ]
+}
