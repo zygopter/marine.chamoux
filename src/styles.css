@@ -3,9 +3,22 @@
 
 body {
     font-family: 'Montserrat', sans-serif; /* Utilisée pour le texte principal */
-  }
+    margin: 0;
+    padding: 0;
+}
   
-  h1, h2, h3 {
+h1, h2, h3 {
     font-family: 'Playfair Display', serif; /* Utilisée pour les titres */
     color: var(--color-dusty-rose);
-  }
+    margin: 0;
+    padding: 0;
+}
+
+a {
+  color: black;
+  text-decoration: none
+}
+
+a:hover {
+  text-decoration: underline
+}

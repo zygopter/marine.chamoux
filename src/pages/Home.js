@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faPhone, faHouse, faLaptop, faCircleUser } from '@fortawesome/free-solid-svg-icons';
+import { faFacebook, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+
 import './Home.css'; // Assurez-vous de créer ce fichier pour vos styles
 
 function Home() {
@@ -28,10 +30,12 @@ function Home() {
     return (
         <div className="container">
             <nav className="top-bar">
-            <div className="site-name">Marine CHAMOUX</div>
+            <h1 className="site-name">Marine  <span class="site-name-color-part">&#8226;</span> CV</h1>
+            <button className="nav-button" onClick="location.href='#home';">About</button>
+            <button className="nav-button" onClick="location.href='#home';">Skills</button>
             <button className="hamburger" onClick={toggleMenu}>
-            {/* Icône de menu hamburger ou simple texte */}
-            &#9776; 
+                {/* Icône de menu hamburger ou simple texte */}
+                &#9776; 
             </button>
             <div ref={menuRef} className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
             <a href="#about">À Propos</a>
@@ -52,9 +56,24 @@ function Home() {
             <div className="sidebar-info">
                 {/* Vos informations de contact ici */}
                 <h2 className="sidebar-title">What about me?</h2>
-                <p><FontAwesomeIcon icon={faEnvelope} /> chamoux.marine@gmail.com</p>
-                <p><FontAwesomeIcon icon={faPhone} /> 06 80 89 96 48</p>
+                <p><FontAwesomeIcon icon={faCircleUser}/>Marine chamoux</p>
+                <p><FontAwesomeIcon icon={faHouse} />Paris, France</p>
+                <p><FontAwesomeIcon icon={faEnvelope}/>
+                    <a href="mailto:chamoux.marine@gmail.com">chamoux.marine@gmail.com</a>
+                </p>
+                <p><FontAwesomeIcon icon={faPhone} />06 80 89 96 48</p>
                 {/* Autres informations de contact */}
+            </div>
+            <div className="social-links">
+                <a href="https://www.facebook.com/yourprofile" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faFacebook} />
+                </a>
+                <a href="https://twitter.com/myLittleChaMou" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faTwitter} />
+                </a>
+                <a href="https://www.linkedin.com/in/marine-chamoux/" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faLinkedin} />
+                </a>
             </div>
         </aside>
 

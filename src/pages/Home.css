@@ -7,33 +7,62 @@
     justify-content: space-between; /* aligne les enfants avec de l'espace entre eux */
     align-items: left;
     flex-direction: column; /* aligne les enfants verticalement au centre */
+    max-width: none;
+    width: 100%; /* Assurez-vous qu'il occupe toute la largeur */
+    margin: 0; /* Aucune marge qui pourrait le restreindre */
   }
 
   .top-bar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: var(--color-vivid-pink); /* Choisissez une couleur de fond */
+    align-items: stretch;
+    padding: 0px 20px;
+    /* background-color: var(--color-vivid-pink);*/
     position: relative;
+    width: auto; /* Assurez-vous qu'il occupe toute la largeur */
   }
   
   .site-name {
-    font-size: 1.5em;
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
     font-weight: bold;
     color: var(--color-dusty-rose);
-    /* Autres styles pour le nom du site */
+  }
+
+  .site-name span {
+    font-size: inherit; /* Cela appliquera la même taille de police que le conteneur */
+    font-weight: inherit; /* Hérite le poids de police du conteneur */
+    color: var(--color-tan);
   }
   
   .nav-links a {
     margin-left: 20px;
     text-decoration: none;
-    color: #b9e8db; /* Couleur des liens */
-    /* Autres styles pour les liens */
+    color: #fff; /* Couleur des liens */
   }
   
   .nav-links a:hover {
     text-decoration: underline;
+  }
+
+  .top-bar .nav-button {
+    background: var(--color-vivid-pink);
+    border: none;
+    color: #fff; /* Couleur du texte */
+    padding: 0px 0px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1em;
+    cursor: pointer;
+    transition: color 0.3s;
+    flex-grow: 1;
+    display: flex;
+    align-items: center; /* Centre le contenu verticalement */
+    justify-content: center; /* Centre le contenu horizontalement */
+  }
+  
+  .top-bar .nav-button:hover {
+    color: #ddd; /* Couleur au survol */
+    background-color: var(--color-dusty-rose);
   }
 
   .hamburger {
@@ -81,21 +110,20 @@
   
   .sidebar {
         width: 100%; /* Pleine largeur sur les petits écrans */
-
-    background-color: var(--color-pale-pink);
+        background-color: var(--color-pale-pink);
   }
   
   /* Sur les écrans plus grands, utilisez une largeur fixe ou relative */
   @media (min-width: 768px) {
     .sidebar {
       width: 500px; /* ou une largeur en pourcentage/vw */
-
-    background-color: var(--color-pale-pink);
+      background-color: var(--color-pale-pink);
     }
   }
   .sidebar-photo {
     /* Styles pour la section photo */
     text-align: center; /* Centrer la photo si nécessaire */
+
   }
   
   .profile-pic {
@@ -105,12 +133,11 @@
     object-fit: cover;
     object-position: 100% 45%;
     border-radius: 1%; /* pour une image ronde */
-    margin: 10px 0; /* ajustez selon vos besoins */
+    margin: 1px 0; /* ajustez selon vos besoins */
   }
   
   .sidebar-info {
     /* Styles pour la section d'informations */
-    font-family: 'Roboto', sans-serif;
     padding: 20px; /* Ajouter du padding */
     background-color: var(--color-pale-pink);
     margin-left: 12%;
@@ -118,19 +145,32 @@
   }
 
   .sidebar-title {
-    color: #210a0a; /* Couleur du titre */
+    color: var(--color-dark-maroon); /* Couleur du titre */
     margin-bottom: 25px;
     /* Autres styles pour le titre */
   }
-  
-  .sidebar-info p {
-    color: var(--color-dark-maroon); /* Couleur du texte */
-    /* Autres styles pour le paragraphe */
+
+  .fa-envelope, .fa-phone, .fa-house, .fa-circle-user, .fa-laptop {
+    margin-right: 17px; /* Espace entre l'icône et le texte */
+    color: var(--color-dark-maroon); /* Couleur des icônes */
   }
 
-  .fa-envelope, .fa-phone {
-    margin-right: 8px; /* Espace entre l'icône et le texte */
+  .sidebar .social-links {
+    display: flex;
+    justify-content: center; /* Centre les icônes horizontalement */
+    align-items: center; /* Centre les icônes verticalement */
+    padding: 10px;
+    margin-top: auto; /* Pousse les icônes en bas si la sidebar est flex */
+  }
+  
+  .sidebar .social-links a {
+    margin: 0 15px; /* Espacement entre les icônes */
     color: var(--color-dark-maroon); /* Couleur des icônes */
+    font-size: 24px; /* Taille des icônes */
+  }
+  
+  .sidebar .social-links a:hover {
+    color: #555; /* Couleur au survol */
   }
 
   
