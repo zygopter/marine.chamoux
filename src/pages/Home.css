@@ -17,7 +17,6 @@
     justify-content: space-between;
     align-items: stretch;
     padding: 0px 20px;
-    /* background-color: var(--color-vivid-pink);*/
     position: relative;
     width: auto; /* Assurez-vous qu'il occupe toute la largeur */
   }
@@ -26,6 +25,7 @@
     font-size: clamp(1.5rem, 5vw, 2.5rem);
     font-weight: bold;
     color: var(--color-dusty-rose);
+    align-self: center;
   }
 
   .site-name span {
@@ -35,7 +35,6 @@
   }
   
   .nav-links a {
-    margin-left: 20px;
     text-decoration: none;
     color: #fff; /* Couleur des liens */
   }
@@ -44,11 +43,10 @@
     text-decoration: underline;
   }
 
-  .top-bar .nav-button {
-    background: var(--color-vivid-pink);
-    border: none;
-    color: #fff; /* Couleur du texte */
+  .nav-links {
     padding: 0px 0px;
+    margin-left: 7vw;
+    margin-right: 5vw;
     text-align: center;
     text-decoration: none;
     font-size: 1em;
@@ -56,13 +54,30 @@
     transition: color 0.3s;
     flex-grow: 1;
     display: flex;
-    align-items: center; /* Centre le contenu verticalement */
-    justify-content: center; /* Centre le contenu horizontalement */
+    align-items: stretch; 
+    justify-content: center;
   }
   
   .top-bar .nav-button:hover {
     color: #ddd; /* Couleur au survol */
     background-color: var(--color-dusty-rose);
+  }
+
+  .nav-links .nav-button {
+    flex-grow: 1;
+    width: 100%; /* Utiliser toute la largeur dans le menu */
+    padding: 10px 20px;
+    margin-right: 1px;
+    text-align: center;
+    background: var(--color-vivid-pink);
+    border: none;
+    align-items: center;
+    color: #fff;
+    /* autres styles pour les boutons dans le menu */
+  }
+
+  .nav-button.active {
+    background: var(--color-dusty-rose);
   }
 
   .hamburger {
@@ -74,6 +89,10 @@
     .hamburger {
       display: block; /* Afficher le bouton hamburger */
       position: relative;
+      background-color: #fff;
+      border: none;
+      color: var(--color-vivid-pink);
+      font-size: 1.2em;
     }
   
     .nav-links {
@@ -84,7 +103,7 @@
         right: 0;
         background-color: #fff; /* ou toute autre couleur */
         width: 50%; /* Faites en sorte que le menu occupe toute la largeur */
-        padding: 10px;
+        padding: 0px;
         max-height: 0;
         overflow: hidden;
         transform: translateY(-10px) scaleY(0.95); /* Légèrement en haut et réduit */
@@ -173,10 +192,21 @@
     color: #555; /* Couleur au survol */
   }
 
-  
+  .content-area {
+    display: flex;
+    flex-direction: row;
+  }
+
+  @media (max-width: 768px) {
+    .content-area {
+        flex-direction: column;
+      }
+  }
+
   .main-content {
     /* Styles pour la section de contenu */
     flex-grow: 1;
+    background-color: var(--color-light-tan);
   }
   
   
