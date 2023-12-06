@@ -1,0 +1,45 @@
+@import url('./Home.css');
+
+.main-content .cv-download-button {
+    position: absolute;
+    top: 10px; /* Ajustez la distance du haut */
+    right: 10px; /* Ajustez la distance de droite */
+    padding: 0px 0px;
+    background-color: var(--color-pale-pink); /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte */
+    text-decoration: none; /* Enlève le soulignement des liens */
+    border-radius: 2px; /* Bords arrondis */
+    font-size: 1em;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+
+.cv-download-button .button-text, 
+.cv-download-button .button-icon {
+  display: flex;
+  flex-grow: 1;
+  padding: 15px 15px;
+  align-items: center; /* Centre le contenu verticalement */
+  justify-content: center; /* Centre le contenu horizontalement */
+}
+
+  .cv-download-button .button-text {
+    transition: color 0.3s ease;
+  }
+  
+  .cv-download-button:hover .button-text {
+    color: #ddd; /* Couleur du texte au survol */
+    background-color: var(--color-dark-maroon);
+  }
+  
+  .cv-download-button .button-icon {
+    /* Styles pour l'icône, si nécessaire */
+    background-color: var(--color-dark-maroon);
+    flex-grow: 1;
+    width: inherit;
+  }
+
+  .cv-download-button .button-text {
+    transition: color 0.3s ease;
+  }
