@@ -5,6 +5,7 @@ import { faFacebook, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-
 
 import './Home.css'; // Assurez-vous de créer ce fichier pour vos styles
 import NavButton from  '../components/NavButton';
+import Footer from  '../components/Footer';
 import About from './About';
 
 function Home() {
@@ -14,6 +15,20 @@ function Home() {
 
     const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    };
+
+    const topBarRef = useRef(null);
+    const sidebarPhotoRef = useRef(null);
+    const footerRef = useRef(null);
+    const [remainingHeight, setRemainingHeight] = useState(0);
+
+    const updateRemainingHeight = () => {
+        const topBarHeight = topBarRef.current?.offsetHeight || 0;
+        const sidebarPhotoHeight = sidebarPhotoRef.current?.offsetHeight || 0;
+        const footerHeight = footerRef.current?.offsetHeight || 0;
+        const totalUsedHeight = topBarHeight + sidebarPhotoHeight + footerHeight;
+
+        setRemainingHeight(window.innerHeight - totalUsedHeight);
     };
 
     // Fermer le menu en cliquant en dehors
@@ -30,9 +45,15 @@ function Home() {
         };
     }, [menuRef]);
 
+    useEffect(() => {
+        updateRemainingHeight();
+        window.addEventListener('resize', updateRemainingHeight);
+        return () => window.removeEventListener('resize', updateRemainingHeight);
+    }, []);
+
     return (
         <div className="container">
-            <nav className="top-bar">
+            <nav ref={topBarRef} className="top-bar">
                 <h1 className="site-name">Marine  <span class="site-name-color-part">&#8226;</span> CV</h1>
                 {/* <button className="nav-button" onClick="location.href='#home';">About</button>
                 <button className="nav-button" onClick="location.href='#home';">Skills</button> */}
@@ -47,43 +68,40 @@ function Home() {
                     <NavButton name="projects" setActiveTab={setActiveTab} activeTab={activeTab}>Projects</NavButton>
                     <NavButton name="curiosities" setActiveTab={setActiveTab} activeTab={activeTab}>Curiosities cabinet</NavButton>
                     <NavButton name="contact" setActiveTab={setActiveTab} activeTab={activeTab}>Contact</NavButton>
-                {/* <a href="#about">À Propos</a>
-                <a href="#skills">Compétences</a>
-                <a href="#experiments">Expériences</a>
-                <a href="#experiments">Projets</a>
-                <a href="#experiments">Cabinet des curiosités</a>
-                <a href="#experiments">Contact</a> */}
-                {/* Autres liens si nécessaire */}
                 </div>
             </nav>
 
             <div className="content-area">
                 <aside className="sidebar">
-                    <div className="sidebar-photo">
+                    <div ref={sidebarPhotoRef} className="sidebar-photo">
                     {/* Votre photo de profil ici */}
                     <img src="/res/profil-picture.jpg" alt="Profile" className="profile-pic" />
                     </div>
-                    <div className="sidebar-info">
-                        {/* Vos informations de contact ici */}
-                        <h2 className="sidebar-title">What about me?</h2>
-                        <p><FontAwesomeIcon icon={faCircleUser}/>Marine chamoux</p>
-                        <p><FontAwesomeIcon icon={faHouse} />Paris, France</p>
-                        <p><FontAwesomeIcon icon={faEnvelope}/>
-                            <a href="mailto:chamoux.marine@gmail.com">chamoux.marine@gmail.com</a>
-                        </p>
-                        <p><FontAwesomeIcon icon={faPhone} />06 80 89 96 48</p>
-                        {/* Autres informations de contact */}
-                    </div>
-                    <div className="social-links">
-                        <a href="https://www.facebook.com/yourprofile" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faFacebook} />
-                        </a>
-                        <a href="https://twitter.com/myLittleChaMou" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faTwitter} />
-                        </a>
-                        <a href="https://www.linkedin.com/in/marine-chamoux/" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faLinkedin} />
-                        </a>
+                    <div style={{ height: remainingHeight }} className="sidebar-text">
+                        <div className="sidebar-info">
+                            {/* Vos informations de contact ici */}
+                            <h2 className="sidebar-title">What about me?</h2>
+                            <p><FontAwesomeIcon icon={faCircleUser}/>Marine chamoux</p>
+                            <p><FontAwesomeIcon icon={faHouse} />Paris, France</p>
+                            <p><FontAwesomeIcon icon={faEnvelope}/>
+                                <a href="mailto:chamoux.marine@gmail.com">chamoux.marine@gmail.com</a>
+                            </p>
+                            <p><FontAwesomeIcon icon={faPhone} />06 80 89 96 48</p>
+                            {/* Autres informations de contact */}
+                        </div>
+                        <div className="social-links">
+                            <a href="https://www.facebook.com/yourprofile" target="_blank" rel="noopener noreferrer">
+                            <FontAwesomeIcon icon={faFacebook} />
+                            </a>
+                            <a href="https://twitter.com/myLittleChaMou" target="_blank" rel="noopener noreferrer">
+                            <FontAwesomeIcon icon={faTwitter} />
+                            </a>
+                            <a href="https://www.linkedin.com/in/marine-chamoux/" target="_blank" rel="noopener noreferrer">
+                            <FontAwesomeIcon icon={faLinkedin} />
+                            </a>
+                        </div>
+                        <div className="hack">
+                        </div>
                     </div>
                 </aside>
 
@@ -94,6 +112,7 @@ function Home() {
                     {/* ... autres conditions pour afficher les sections ... */}
                 </main>
             </div>
+            <Footer ref={footerRef}/>
         </div>
     );
 }

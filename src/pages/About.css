@@ -43,3 +43,23 @@
   .cv-download-button .button-text {
     transition: color 0.3s ease;
   }
+
+  .titre {
+    margin-top: 10vh;
+    margin-left: 10vh;
+  }
+
+  .titre .name {
+    color: var(--color-dark-maroon);
+    font-size: 3em;
+    font-weight: bold;
+  }
+
+  .description {
+    padding: 20px;
+    margin: 20px 20px;
+    margin-right: 80px;
+    font-size: 1em;
+    line-height: 1.6;
+    /* autres styles selon vos besoins */
+  }
