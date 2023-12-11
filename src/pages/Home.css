@@ -176,6 +176,7 @@
 
   .sidebar-title {
     color: var(--color-dark-maroon); /* Couleur du titre */
+    font-weight: bold;
     margin-top: 15px;
     margin-bottom: 25px;
     /* Autres styles pour le titre */
