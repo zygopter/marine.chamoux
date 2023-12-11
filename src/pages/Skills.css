@@ -1,0 +1,42 @@
+@import url('./Home.css');
+
+.titre {
+    margin-top: 10vh;
+    margin-left: 10vh;
+  }
+
+  .titre .name {
+    color: var(--color-dark-maroon);
+    font-size: 3em;
+    font-weight: bold;
+  }
+  
+.skill {
+    margin-bottom: 10px;
+    padding: 20px;
+  }
+  
+  .skill-name {
+    font-size: 1em;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    padding: 20px;
+  }
+  
+  .skill-bar {
+    width: 80%;
+    background-color: #ddd; /* Couleur de fond de la barre */
+    height: 10px;
+    border-radius: 5px;
+    margin-left: 20px;
+  }
+  
+  .skill-percentage {
+    height: 100%;
+    background-color: #4CAF50; /* Couleur de la barre de compétence */
+    border-radius: 5px;
+    /* Ajoutez une transition si vous voulez une animation */
+    transition: width 1s ease-in-out;
+    background-image: linear-gradient(to right, var(--color-dark-maroon), var(--color-dusty-rose), var(--color-vivid-pink), var(--color-vivid-pink),var(--color-tan));
+  }
+  

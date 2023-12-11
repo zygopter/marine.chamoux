@@ -7,6 +7,7 @@ import './Home.css'; // Assurez-vous de créer ce fichier pour vos styles
 import NavButton from  '../components/NavButton';
 import Footer from  '../components/Footer';
 import About from './About';
+import Skills from './Skills';
 
 function Home() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -107,7 +108,7 @@ function Home() {
 
                 <main className="main-content">
                     {activeTab === 'home' && <About />}
-                    {activeTab === 'skills' && <About />}
+                    {activeTab === 'skills' && <Skills />}
                     {activeTab === 'experience' && <About />}
                     {/* ... autres conditions pour afficher les sections ... */}
                 </main>
