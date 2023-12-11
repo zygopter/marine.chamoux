@@ -36,6 +36,9 @@ function About() {
             </p>
             </div>
         </div>
+        <div className="citation">
+        <p>“I love robots and art, and luckily they get along well ! ❤🤖”</p>
+        </div>
     </div>
   );
 }

@@ -63,3 +63,11 @@
     line-height: 1.6;
     /* autres styles selon vos besoins */
   }
+
+  .citation {
+    font-family: 'Georgia', serif; /* Utilisez une police élégante */
+    font-size: 1.2em; /* Une taille de police légèrement plus grande */
+    font-style: italic; /* Style italique pour distinguer la citation */
+    text-align: center; /* Centrer la citation */
+    color: #555; /* Une couleur subtile */
+  }
