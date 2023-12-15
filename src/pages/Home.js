@@ -76,7 +76,7 @@ function Home() {
                 <aside className="sidebar">
                     <div ref={sidebarPhotoRef} className="sidebar-photo">
                     {/* Votre photo de profil ici */}
-                    <img src="/res/profil-picture.jpg" alt="Profile" className="profile-pic" />
+                        <img src="/res/profil-pic-recrop.png" alt="Profile" className="profile-pic" />
                     </div>
                     <div style={{ height: remainingHeight }} className="sidebar-text">
                         <div className="sidebar-info">
