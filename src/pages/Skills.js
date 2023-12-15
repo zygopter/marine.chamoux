@@ -29,10 +29,14 @@ function Skills() {
       <div className="container-skills">
         <div className='titre'>
             <h2 className='titre1'>What I am good at</h2>
-            <h1 className='name'>Skills</h1>
+            <h1 className='name'>Expertise</h1>
         </div>
+        <h3 className='technical-skills'>Software development</h3>
+        <div className='skills-bars'>
         <SkillBar skill="C++" percentage={70} />
-        <SkillBar skill="Kotlin" percentage={50} />
+        <SkillBar skill="Kotlin" percentage={70} />
+        <SkillBar skill="Web" percentage={50} />
+        </div>
       </div>
     );
 }

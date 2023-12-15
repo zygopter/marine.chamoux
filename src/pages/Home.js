@@ -64,7 +64,7 @@ function Home() {
                 </button>
                 <div ref={menuRef} className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
                     <NavButton name="home" setActiveTab={setActiveTab} activeTab={activeTab}>About</NavButton>
-                    <NavButton name="skills" setActiveTab={setActiveTab} activeTab={activeTab}>Skills</NavButton>
+                    <NavButton name="skills" setActiveTab={setActiveTab} activeTab={activeTab}>Expertise</NavButton>
                     <NavButton name="experience" setActiveTab={setActiveTab} activeTab={activeTab}>Experience</NavButton>
                     <NavButton name="projects" setActiveTab={setActiveTab} activeTab={activeTab}>Projects</NavButton>
                     <NavButton name="curiosities" setActiveTab={setActiveTab} activeTab={activeTab}>Curiosities cabinet</NavButton>

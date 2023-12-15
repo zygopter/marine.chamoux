@@ -10,17 +10,25 @@
     font-size: 3em;
     font-weight: bold;
   }
-  
-.skill {
-    margin-bottom: 10px;
-    padding: 20px;
+
+  .technical-skills {
+    margin-top: 40px;
+    margin-left: 50px;
+    color: black;
   }
+
   
   .skill-name {
     font-size: 1em;
     margin-bottom: 5px;
-    margin-left: 20px;
+    margin-left: 50px;
     padding: 20px;
+  }
+
+  .skills-bars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Crée deux colonnes de taille égale */
+    gap: 10px; /* Espace entre les compétences */
   }
   
   .skill-bar {
@@ -28,7 +36,8 @@
     background-color: #ddd; /* Couleur de fond de la barre */
     height: 10px;
     border-radius: 5px;
-    margin-left: 20px;
+    margin-left: 50px;
+    flex-basis: calc(50% - 10px);
   }
   
   .skill-percentage {
@@ -37,6 +46,6 @@
     border-radius: 5px;
     /* Ajoutez une transition si vous voulez une animation */
     transition: width 1s ease-in-out;
-    background-image: linear-gradient(to right, var(--color-dark-maroon), var(--color-dusty-rose), var(--color-vivid-pink), var(--color-vivid-pink),var(--color-tan));
+    background-image: linear-gradient(to right, #A7365E, #FE85A9, #F7F5DD, #00C89A,#005A38);
   }
   
