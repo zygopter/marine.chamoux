@@ -1,6 +1,6 @@
 @import url('./Home.css');
 
-.main-content .cv-download-button {
+.cv-download-button {
     position: absolute;
     top: 10px; /* Ajustez la distance du haut */
     right: 10px; /* Ajustez la distance de droite */
@@ -56,11 +56,12 @@
   }
 
   .description {
-    padding: 20px;
-    margin: 20px 20px;
-    margin-right: 80px;
+    margin-top: 30px;
+    margin-left: 10vh;
+    margin-right: 15vh;
     font-size: 1em;
     line-height: 1.6;
+    overflow: scroll;
     /* autres styles selon vos besoins */
   }
 

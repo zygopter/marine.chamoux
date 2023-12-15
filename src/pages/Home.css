@@ -90,9 +90,9 @@
   }
   
 /* Sur les petits écrans */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .hamburger {
-      display: block; /* Afficher le bouton hamburger */
+      display: block;
       position: relative;
       background-color: #fff;
       border: none;
@@ -102,48 +102,48 @@
   
     .nav-links {
         display: flex;
-        flex-direction: column; /* Affichage en colonne pour le menu déroulant */
+        flex-direction: column;
         position: absolute;
         top: 100%;
         right: 0;
-        background-color: #fff; /* ou toute autre couleur */
-        width: 50%; /* Faites en sorte que le menu occupe toute la largeur */
+        background-color: #fff;
+        width: 50%;
         padding: 0px;
         max-height: 0;
         overflow: hidden;
-        transform: translateY(-10px) scaleY(0.95); /* Légèrement en haut et réduit */
-        opacity: 0; /* Commence invisible */
+        transform: translateY(-10px) scaleY(0.95);
+        opacity: 0;
         transition: transform 0.9s ease, opacity 0.5s ease;
     }
 
     .nav-links a {
-        display: block; /* Affiche chaque lien sur sa propre ligne */
-        margin-bottom: 15px; /* Espacement entre les liens */
-        font-size: 1.2em; /* Augmentez la taille de la police */
-        text-align: right; /* Aligner le texte à droite */
-        text-transform: uppercase; /* Mettre le texte en majuscules */
+        display: block;
+        margin-bottom: 15px;
+        font-size: 1.2em;
+        text-align: right;
+        text-transform: uppercase;
       }
   
     .nav-links.open {
-        max-height: 300px; /* Ajustez en fonction de la hauteur de votre menu */
+        max-height: 300px;
         transform: translateY(0) scaleY(1); 
         opacity: 1;
-        display: flex; /* Afficher le menu quand il est ouvert */
+        display: flex;
     }
-  }
+  } */
 
   /* -------- SIDE BAR -------- */
   
   .sidebar {
-        width: 100%; /* Pleine largeur sur les petits écrans */
-        background-color: var(--color-pale-pink);
+    width: 450px; /* ou une largeur en pourcentage/vw */
+    flex-shrink: 0;
+    background-color: var(--color-pale-pink);
   }
   
-  /* Sur les écrans plus grands, utilisez une largeur fixe ou relative */
-  @media (min-width: 768px) {
+  @media (max-width: 768px) {
     .sidebar {
-      width: 450px; /* ou une largeur en pourcentage/vw */
-      background-color: var(--color-pale-pink);
+        width: 100%;
+        background-color: var(--color-pale-pink);
     }
   }
   .sidebar-photo {
@@ -153,11 +153,9 @@
   
   .profile-pic {
     width: 100%; /* ou une autre taille selon votre design */
-    min-width: 50vh;
-    max-height: 55vh;
-    height: auto;
+    height: 450px;
     object-fit: cover;
-    object-position: 100% 45%;
+    object-position: 0% 100%;
   }
 
   .sidebar-text {
@@ -213,7 +211,8 @@
 
   .content-area {
     display: flex;
-    flex-direction: row;
+    flex-grow: 1; /* Prend tout l'espace restant après la top-bar */
+    width: 100%;
   }
 
   @media (max-width: 768px) {

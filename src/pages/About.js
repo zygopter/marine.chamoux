@@ -18,7 +18,8 @@ function About() {
             <h2 className='titre1'>Software engineering manager</h2>
             <h2 className='titre2'>& Product Owner in Robotics</h2>
             <h1 className='name'>Marine Chamoux</h1>
-            <div className="description">
+        </div>
+        <div className="description">
             <p>
                 I have been leading the HRI team in the software department at Aldebaran for almost 7 years now, addressing the challenges of social robotics to enhance the social intelligence and the attractiveness and naturalness of our robots.
             </p>
@@ -34,7 +35,6 @@ function About() {
             <p>
                 Publications: <a href="https://www.researchgate.net/scientific-contributions/Marine-Chamoux-2191095408" target="_blank" rel="noopener noreferrer">ResearchGate</a>
             </p>
-            </div>
         </div>
         <div className="citation">
         <p>“I love robots and art, and luckily they get along well ! ❤🤖”</p>
