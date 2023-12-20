@@ -1,0 +1,26 @@
+.curiosities-container {
+    padding: 20px;
+    overflow-y: scroll;
+}
+
+.artworks-gallery {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px 0;
+}
+
+.artwork-item {
+    flex: none;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.artwork-item img {
+    width: 200px; /* ou une autre largeur selon vos besoins */
+    height: auto;
+    border-radius: 10px; /* Pour des bords arrondis */
+}
+
+.artwork-item p {
+    margin-top: 5px;
+}

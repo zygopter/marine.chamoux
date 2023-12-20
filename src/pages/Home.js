@@ -8,6 +8,7 @@ import NavButton from  '../components/NavButton';
 import Footer from  '../components/Footer';
 import About from './About';
 import Skills from './Skills';
+import Curiosities from './Curiosities';
 
 function Home() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -22,14 +23,17 @@ function Home() {
     const sidebarPhotoRef = useRef(null);
     const footerRef = useRef(null);
     const [remainingHeight, setRemainingHeight] = useState(0);
+    const [remainingHeightMainContent, setRemainingHeightMainContent] = useState(0);
 
     const updateRemainingHeight = () => {
         const topBarHeight = topBarRef.current?.offsetHeight || 0;
         const sidebarPhotoHeight = sidebarPhotoRef.current?.offsetHeight || 0;
         const footerHeight = footerRef.current?.offsetHeight || 0;
-        const totalUsedHeight = topBarHeight + sidebarPhotoHeight + footerHeight;
+        const totalTopBottom = topBarHeight + footerHeight;
+        const totalUsedHeight = totalTopBottom + sidebarPhotoHeight;
 
         setRemainingHeight(window.innerHeight - totalUsedHeight);
+        setRemainingHeightMainContent(window.innerHeight - totalTopBottom )
     };
 
     // Fermer le menu en cliquant en dehors
@@ -106,10 +110,11 @@ function Home() {
                     </div>
                 </aside>
 
-                <main className="main-content">
+                <main style={{ height: remainingHeightMainContent }} className="main-content">
                     {activeTab === 'home' && <About />}
                     {activeTab === 'skills' && <Skills />}
                     {activeTab === 'experience' && <About />}
+                    {activeTab === 'curiosities' && <Curiosities />}
                     {/* ... autres conditions pour afficher les sections ... */}
                 </main>
             </div>
