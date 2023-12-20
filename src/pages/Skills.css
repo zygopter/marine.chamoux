@@ -33,7 +33,7 @@
   
   .skill-bar {
     width: 80%;
-    background-color: #ddd; /* Couleur de fond de la barre */
+    background-color: #ddd;
     height: 10px;
     border-radius: 5px;
     margin-left: 50px;
@@ -42,10 +42,12 @@
   
   .skill-percentage {
     height: 100%;
-    background-color: #4CAF50; /* Couleur de la barre de compétence */
+    background-color: #4CAF50;
     border-radius: 5px;
-    /* Ajoutez une transition si vous voulez une animation */
     transition: width 1s ease-in-out;
-    background-image: linear-gradient(to right, #A7365E, #FE85A9, #F7F5DD, #00C89A,#005A38);
+    background-image: linear-gradient(to right, #A7365E, #FE85A9, #F7F5DD, #00C89A,#005A38 80%);
   }
+  
+  
+  
   
